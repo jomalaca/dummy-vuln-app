@@ -1,5 +1,6 @@
 version: 0.2
 
+
 env:
   variables:
     IMAGE_NAME: "sysdiglabs/dummy-vuln-app:latest"
@@ -19,3 +20,6 @@ phases:
     - docker run --rm -v /var/run/docker.sock:/var/run/docker.sock $SCAN_IMAGE_NAME --sysdig-url https://us2.app.sysdig.com --sysdig-token $SYSDIG_SECURE_TOKEN --storage-type docker-daemon $IMAGE_NAME
     - docker login -u $DOCKER_LOGIN_USER -p $DOCKER_LOGIN_PASSWORD
     - docker push $IMAGE_NAME
+
+
+
